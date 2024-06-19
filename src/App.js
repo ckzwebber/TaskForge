@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import TasksList from "./components/TasksList.js";
+import "./App.css";
 
 const App = () => {
-  return <h1>TaskForge</h1>;
+  const [tasksObject, setTasksObject] = useState([
+    {
+      id: 1,
+      title: "Estudar",
+      completed: false,
+    },
+
+    {
+      id: 2,
+      title: "Fazer Exercício",
+      completed: true,
+    },
+  ]);
+
+  return (
+    <>
+      <div className="main">
+        <TasksList soManyTasks={tasksObject} />
+      </div>
+      ;
+    </>
+  );
 };
 
 export default App;
