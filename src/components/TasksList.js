@@ -1,11 +1,11 @@
 import React from "react";
-import TheTask from "./TheTask";
+import ShowOneTask from "./TheOneTask.js";
 
 const TasksList = ({ soManyTasks }) => {
   return (
     <>
       {soManyTasks.map((theTask) => (
-        <TheTask theTask={theTask} />
+        <ShowOneTask theTask={theTask} />
       ))}
     </>
   );

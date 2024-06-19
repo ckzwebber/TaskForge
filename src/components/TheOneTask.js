@@ -1,6 +1,6 @@
 import React from "react";
 
-const TheTask = ({ theTask }) => {
+const ShowOneTask = ({ theTask }) => {
   return (
     <>
       <h1>{theTask.title}</h1>
@@ -8,4 +8,4 @@ const TheTask = ({ theTask }) => {
   );
 };
 
-export default TheTask;
+export default ShowOneTask;
