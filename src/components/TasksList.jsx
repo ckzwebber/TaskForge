@@ -1,5 +1,5 @@
 import React from "react";
-import ShowOneTask from "./TheOneTask.js";
+import ShowOneTask from "./ShowOneTask";
 
 const TasksList = ({ soManyTasks }) => {
   return (

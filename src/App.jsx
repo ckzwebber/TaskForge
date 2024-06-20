@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TasksList from "./components/TasksList.js";
+import TasksList from "./components/TasksList.jsx";
+import AddTaskButton from "./components/AddTaskButton.jsx";
 import "./App.css";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
     <>
       <div className="main">
         <TasksList soManyTasks={tasksObject} />
+        <AddTaskButton />
       </div>
       ;
     </>

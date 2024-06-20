@@ -1,11 +1,8 @@
 import React from "react";
+import "./TheOneTask.css";
 
 const ShowOneTask = ({ theTask }) => {
-  return (
-    <>
-      <h1>{theTask.title}</h1>
-    </>
-  );
+  return <div className="show-one-task">{theTask.title}</div>;
 };
 
 export default ShowOneTask;
