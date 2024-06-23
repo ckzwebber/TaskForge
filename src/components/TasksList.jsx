@@ -1,11 +1,11 @@
 import React from "react";
 import ShowOneTask from "./ShowOneTask";
 
-const TasksList = ({ soManyTasks }) => {
+const TasksList = ({ soManyTasks, handleTaskClick }) => {
   return (
     <>
       {soManyTasks.map((theTask) => (
-        <ShowOneTask showTheTask={theTask} />
+        <ShowOneTask showTheTask={theTask} handleTaskClick={handleTaskClick} />
       ))}
     </>
   );
