@@ -5,7 +5,7 @@ const TasksList = ({ soManyTasks }) => {
   return (
     <>
       {soManyTasks.map((theTask) => (
-        <ShowOneTask theTask={theTask} />
+        <ShowOneTask showTheTask={theTask} />
       ))}
     </>
   );

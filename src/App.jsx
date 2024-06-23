@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Navbar from "./components/Navbar.jsx";
 import TasksList from "./components/TasksList.jsx";
-import AddTaskButton from "./components/AddTaskButton.jsx";
+import AddTask from "./components/AddTask.jsx";
 import "./App.css";
 
 const App = () => {
@@ -20,9 +21,10 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
       <div className="main">
         <TasksList soManyTasks={tasksObject} />
-        <AddTaskButton />
+        <AddTask />
       </div>
       ;
     </>

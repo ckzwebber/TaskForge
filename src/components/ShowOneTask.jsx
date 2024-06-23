@@ -1,8 +1,12 @@
 import React from "react";
-import "./TheOneTask.css";
+import "./ShowOneTask.css";
 
-const ShowOneTask = ({ theTask }) => {
-  return <div className="show-one-task">{theTask.title}</div>;
+const ShowOneTask = ({ showTheTask }) => {
+  return (
+  <div className="tasks">
+    <div className="show-one-task">{showTheTask.title}</div>
+  </div>
+  );
 };
 
 export default ShowOneTask;

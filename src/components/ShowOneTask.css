@@ -1,18 +1,18 @@
 .show-one-task {
-  background-color: #053130;
+  background-color: #dfdfdf;
   margin: 8px 0;
   padding: 15px 20px;
   display: flex;
   border-radius: 5px;
   justify-content: space-between;
-  color: white;
+  color: #181818;
   align-items: center;
   font-size: 1.1rem;
   transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-
 .show-one-task:hover {
-  background-color: #0d5e50;
+  color: #dfdfdf;
+  background-color: #181818;
   cursor: pointer;
-  scale: 1.01;
 }
