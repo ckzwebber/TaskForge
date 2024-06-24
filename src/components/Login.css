@@ -3,6 +3,7 @@
   width: 30%;
   align-content: center;
   height: 65vh;
+  color: #181818;
 }
 
 .login_style {
@@ -15,6 +16,12 @@
   text-align: left;
   margin-bottom: 20px;
   font-weight: bold;
+}
+
+.login_style a {
+  margin-top: 30px;
+  color: #181818;
+  text-decoration: none;
 }
 
 .login__group {

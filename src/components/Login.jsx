@@ -25,10 +25,12 @@ const Login = () => {
                 type="password"
                 class="login__field"
                 placeholder="password"
+                style={{ marginBottom: "20px" }}
               ></input>
 
               <label class="login__label">Password</label>
             </div>
+            <a href="">Forgot password?</a>
           </form>
         </div>
       </div>
