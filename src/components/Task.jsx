@@ -40,6 +40,12 @@ const Task = () => {
     setTasksObject([...tasksObject, newTask]);
   };
 
+  const deleteTask = (taskId) => {
+    const newTasks = tasksObject.filter((task) => task.id !== taskId);
+
+    setTasksObject(newTasks);
+  };
+
   return (
     <>
       <Navbar />
@@ -47,6 +53,7 @@ const Task = () => {
         <TasksList
           soManyTasks={tasksObject}
           handleTaskClick={handleFunctionTaskClick}
+          deleteTask={deleteTask}
         />
         <AddTask addNewTask={addNewTask} />
       </div>

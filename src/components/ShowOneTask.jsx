@@ -3,7 +3,7 @@ import "./ShowOneTask.css";
 import Checkbox from "./Checkbox";
 import CheckboxOff from "./CheckboxOff";
 
-const ShowOneTask = ({ showTheTask, handleTaskClick }) => {
+const ShowOneTask = ({ showTheTask, handleTaskClick, deleteTask }) => {
   return (
     <div className="tasks">
       <div
@@ -11,6 +11,12 @@ const ShowOneTask = ({ showTheTask, handleTaskClick }) => {
         onClick={() => handleTaskClick(showTheTask.id)}
       >
         {showTheTask.title}
+        <button
+          className="delete-button"
+          onClick={() => deleteTask(showTheTask.id)}
+        >
+          x
+        </button>
         {showTheTask.completed ? <Checkbox /> : <CheckboxOff />}
       </div>
     </div>
