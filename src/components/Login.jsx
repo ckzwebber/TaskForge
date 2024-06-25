@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Login.css";
+import Button from "./Button";
 
 const Login = () => {
+  let children = "Login";
+
   return (
     <>
       <Navbar />
@@ -31,6 +34,9 @@ const Login = () => {
               <label class="login__label">Password</label>
             </div>
             <a href="">Forgot password?</a>
+            <div className="login__button">
+              <Button children={children} />
+            </div>
           </form>
         </div>
       </div>

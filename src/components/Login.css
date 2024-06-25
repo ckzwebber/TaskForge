@@ -1,6 +1,6 @@
 .login {
   margin: 30px auto;
-  width: 30%;
+  width: 40%;
   align-content: center;
   height: 65vh;
   color: #181818;
@@ -87,4 +87,10 @@
 .login__field:required,
 .login__field:invalid {
   box-shadow: none;
+}
+
+.login__button {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
