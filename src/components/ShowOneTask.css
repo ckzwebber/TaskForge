@@ -1,3 +1,7 @@
+.tasks {
+  position: relative;
+}
+
 .show-one-task {
   background-color: #dfdfdf;
   margin: 8px 0;
@@ -15,21 +19,23 @@
   overflow: scroll;
 }
 
-.show-one-task:hover {
-  color: #dfdfdf;
-  background-color: #3f3f3f;
-  cursor: pointer;
+.controls {
+  background: transparent;
+  display: flex;
+}
+
+.check {
+  background: transparent;
+  display: flex;
+  margin-left: 20px;
 }
 
 .delete-button {
+  display: flex;
   background: transparent;
   border: none;
   font-size: 16px;
   color: #181818;
-  position: relative;
   z-index: 10;
-}
-
-.delete-button:hover {
-  color: white;
+  cursor: pointer;
 }
