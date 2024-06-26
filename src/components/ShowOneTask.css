@@ -16,7 +16,14 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: relative;
   z-index: 0;
-  overflow: scroll;
+  overflow: hidden;
+}
+
+.show-one-task p {
+  background: transparent;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .show-one-task:hover {
@@ -54,4 +61,14 @@
   font-size: 25px;
   margin-left: 15px;
   align-self: center;
+  cursor: pointer;
+}
+
+.edit-input {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  width: 100%;
+  border-bottom: 1px solid #181818;
+  outline: none;
 }

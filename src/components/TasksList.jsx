@@ -1,17 +1,32 @@
 import React from "react";
 import ShowOneTask from "./ShowOneTask";
 
-const TasksList = ({ soManyTasks, handleTaskClick, deleteTask }) => {
+const TasksList = ({
+  soManyTasks,
+  handleTaskClick,
+  deleteTask,
+  startEditingTask,
+  editTaskId,
+  editTaskTitle,
+  handleEditTaskChange,
+  saveEditedTask,
+}) => {
   return (
-    <>
-      {soManyTasks.map((theTask) => (
+    <div>
+      {soManyTasks.map((task) => (
         <ShowOneTask
-          showTheTask={theTask}
+          key={task.id}
+          showTheTask={task}
           handleTaskClick={handleTaskClick}
           deleteTask={deleteTask}
+          startEditingTask={startEditingTask}
+          editTaskId={editTaskId}
+          editTaskTitle={editTaskTitle}
+          handleEditTaskChange={handleEditTaskChange}
+          saveEditedTask={saveEditedTask}
         />
       ))}
-    </>
+    </div>
   );
 };
 
