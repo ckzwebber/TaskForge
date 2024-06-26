@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar.jsx";
+import Header from "./Header.jsx";
 import TasksList from "./TasksList.jsx";
 import AddTask from "./AddTask.jsx";
 import { v7 as uuidv7 } from "uuid";
@@ -16,7 +17,7 @@ const Task = () => {
     {
       id: 2,
       title: "Fazer Exercício",
-      completed: true,
+      completed: false,
     },
   ]);
 
@@ -33,7 +34,7 @@ const Task = () => {
   const addNewTask = (taskTitle) => {
     const newTask = {
       id: uuidv7(),
-      title: taskTitle,
+      title: taskTitle === "" ? (taskTitle = "No title") : taskTitle,
       completed: false,
     };
 
@@ -50,6 +51,7 @@ const Task = () => {
     <>
       <Navbar />
       <div className="main">
+        <Header />
         <TasksList
           soManyTasks={tasksObject}
           handleTaskClick={handleFunctionTaskClick}
