@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar.jsx";
 import Header from "./Header.jsx";
 import TasksList from "./TasksList.jsx";
 import AddTask from "./AddTask.jsx";
-import { v7 as uuidv7 } from "uuid";
+import axios from "axios";
 import "../App.css";
 
 const Task = () => {
-  const [tasksObject, setTasksObject] = useState([
-    { id: 1, title: "Estudar", completed: false },
-    { id: 2, title: "Fazer Exercício", completed: false },
-  ]);
+  const [tasksObject, setTasksObject] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3030/tasks")
+      .then((response) => {
+        setTasksObject(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error when searching for tasks:", error);
+      });
+  }, []);
+
   const [editTaskId, setEditTaskId] = useState(null);
   const [editTaskTitle, setEditTaskTitle] = useState("");
 
@@ -23,17 +32,31 @@ const Task = () => {
   };
 
   const addNewTask = (taskTitle) => {
-    const newTask = {
-      id: uuidv7(),
-      title: taskTitle === "" ? "No title" : taskTitle,
-      completed: false,
-    };
-    setTasksObject([...tasksObject, newTask]);
+    axios
+      .post("http://localhost:3030/tasks", {
+        title: taskTitle,
+        completed: false,
+      })
+      .then((response) => {
+        setTasksObject([...tasksObject, response.data]);
+      })
+      .catch((error) => {
+        console.error("There was an error creating the task:", error);
+      });
   };
 
   const deleteTask = (taskId) => {
-    const newTasks = tasksObject.filter((task) => task.id !== taskId);
-    setTasksObject(newTasks);
+    axios
+      .delete(`http://localhost:3030/tasks/${taskId}`)
+      .then(() => {
+        setTasksObject(tasksObject.filter((task) => task.id !== taskId));
+      })
+      .catch((error) => {
+        console.error(
+          `There was an error deleting the task with ID ${taskId}:`,
+          error
+        );
+      });
   };
 
   const startEditingTask = (taskId, taskTitle) => {
@@ -46,6 +69,20 @@ const Task = () => {
   };
 
   const saveEditedTask = (taskId) => {
+    // axios
+    //   .put(`http://localhost:3030/tasks/${taskId}`, updatedTask)
+    //   .then(() => {
+    //     setTasksObject(
+    //       tasksObject.map((task) => (task.id === taskId ? updatedTask : task))
+    //     );
+    //   })
+    //   .catch((error) => {
+    //     console.error(
+    //       `There was an error updating the task with ID${taskId}:`,
+    //       error
+    //     );
+    //   });
+
     const newTasks = tasksObject.map((task) => {
       if (task.id === taskId) return { ...task, title: editTaskTitle };
       return task;
