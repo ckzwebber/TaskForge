@@ -20,9 +20,6 @@ const Task = () => {
       });
   }, []);
 
-  const [editTaskId, setEditTaskId] = useState(null);
-  const [editTaskTitle, setEditTaskTitle] = useState("");
-
   const handleFunctionTaskClick = (taskId) => {
     const newTasks = tasksObject.map((task) => {
       if (task.id === taskId) return { ...task, completed: !task.completed };
@@ -59,6 +56,9 @@ const Task = () => {
       });
   };
 
+  const [editTaskId, setEditTaskId] = useState(null);
+  const [editTaskTitle, setEditTaskTitle] = useState("");
+
   const startEditingTask = (taskId, taskTitle) => {
     setEditTaskId(taskId);
     setEditTaskTitle(taskTitle);
@@ -69,27 +69,27 @@ const Task = () => {
   };
 
   const saveEditedTask = (taskId) => {
-    // axios
-    //   .put(`http://localhost:3030/tasks/${taskId}`, updatedTask)
-    //   .then(() => {
-    //     setTasksObject(
-    //       tasksObject.map((task) => (task.id === taskId ? updatedTask : task))
-    //     );
-    //   })
-    //   .catch((error) => {
-    //     console.error(
-    //       `There was an error updating the task with ID${taskId}:`,
-    //       error
-    //     );
-    //   });
-
-    const newTasks = tasksObject.map((task) => {
-      if (task.id === taskId) return { ...task, title: editTaskTitle };
-      return task;
+    const task = tasksObject.map((task) => {
+      axios
+        .put(`http://localhost:3030/tasks/${taskId}`, {
+          title: editTaskTitle,
+          completed: task.completed,
+        })
+        .then((response) => {
+          const updatedTasks = tasksObject.map((task) =>
+            task.id === taskId ? { ...task, title: editTaskTitle } : task
+          );
+          setTasksObject(updatedTasks);
+          setEditTaskId(null);
+          setEditTaskTitle("");
+        })
+        .catch((error) => {
+          console.error(
+            `Houve um erro ao atualizar a tarefa com ID ${taskId}:`,
+            error
+          );
+        });
     });
-    setTasksObject(newTasks);
-    setEditTaskId(null);
-    setEditTaskTitle("");
   };
 
   return (
