@@ -21,11 +21,25 @@ const Task = () => {
   }, []);
 
   const handleFunctionTaskClick = (taskId) => {
-    const newTasks = tasksObject.map((task) => {
-      if (task.id === taskId) return { ...task, completed: !task.completed };
-      return task;
+    const task = tasksObject.map((task) => {
+      axios
+        .put(`http://localhost:3030/tasks/${taskId}`, {
+          title: task.title,
+          completed: !task.completed,
+        })
+        .then((response) => {
+          const updatedTasks = tasksObject.map((task) =>
+            task.id === taskId ? { ...task, completed: !task.completed } : task
+          );
+          setTasksObject(updatedTasks);
+        })
+        .catch((error) => {
+          console.error(
+            `There was an error updating the task with ID ${taskId}:`,
+            error
+          );
+        });
     });
-    setTasksObject(newTasks);
   };
 
   const addNewTask = (taskTitle) => {
