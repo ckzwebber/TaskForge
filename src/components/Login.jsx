@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Login.css";
-import Button from "./Button";
 
 const Login = () => {
-  let children = "Login";
+  const handleClickLogin = (e) => console.log(e);
 
   return (
     <>
@@ -13,7 +12,7 @@ const Login = () => {
       <div className="login">
         <div className="login_style">
           <h1>Login</h1>
-          <form>
+          <form onSubmit={handleClickLogin}>
             <div class="login__group field">
               <input
                 type="text"
@@ -33,9 +32,11 @@ const Login = () => {
 
               <label class="login__label">Password</label>
             </div>
-            <a href="">Forgot password?</a>
-            <div className="login__button">
-              <Button children={children} />
+            <a href="">Não possui uma conta?</a>
+            <div className="login__button_div">
+              <button type="submit" className="login__button">
+                Login
+              </button>
             </div>
           </form>
         </div>

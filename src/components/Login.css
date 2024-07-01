@@ -90,7 +90,24 @@
 }
 
 .login__button {
-  margin-top: 40px;
+  cursor: pointer;
+  padding: 0px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #181818;
+  background: #dfdfdf;
+  position: relative;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: all 250ms;
+}
+
+.login__button:hover {
+  background-color: #ffffff;
+}
+
+.login__button_div {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
