@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route exact path="/Tasks" element={<Private Item={Task} />} />
-          <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="*" element={<Register />} />
         </Routes>
       </Fragment>
     </BrowserRouter>
