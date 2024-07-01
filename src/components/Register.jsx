@@ -11,7 +11,7 @@ const Login = () => {
       <Navbar />
       <div className="login">
         <div className="login_style">
-          <h1>Login</h1>
+          <h1>Register</h1>
           <form onSubmit={handleClickLogin}>
             <div class="login__group field">
               <input
@@ -32,10 +32,10 @@ const Login = () => {
 
               <label class="login__label">Password</label>
             </div>
-            <Link to={"/"}>Don't have an account?</Link>
+            <Link to={"/login"}>Already have an account?</Link>
             <div className="login__button_div">
               <button type="submit" className="login__button">
-                Login
+                Register
               </button>
             </div>
           </form>

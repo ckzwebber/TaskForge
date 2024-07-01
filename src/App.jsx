@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Task from "./components/Task.jsx";
 import Login from "./components/Login.jsx";
-import Home from "./components/Home.jsx";
+import Register from "./components/Register.jsx";
 import "./App.css";
+
+const Private = ({ Item }) => {
+  const signed = false;
+
+  return signed ? <Item /> : <Register />;
+};
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/Pages" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/" element={<Task />} />
-      </Routes>
+      <Fragment>
+        <Routes>
+          <Route path="/" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route exact path="/Tasks" element={<Private Item={Task} />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Routes>
+      </Fragment>
     </BrowserRouter>
   );
 };

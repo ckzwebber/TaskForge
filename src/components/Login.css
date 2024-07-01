@@ -4,6 +4,7 @@
   align-content: center;
   height: 65vh;
   color: #181818;
+  min-width: 550px;
 }
 
 .login_style {
