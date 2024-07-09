@@ -32,7 +32,7 @@ const Login = () => {
 
               <label class="login__label">Password</label>
             </div>
-            <Link to={"/login"}>Already have an account?</Link>
+            <Link to={"/"}>Already have an account?</Link>
             <div className="login__button_div">
               <button type="submit" className="login__button">
                 Register

@@ -2,6 +2,12 @@
   position: relative;
 }
 
+h1 {
+  color: #181818;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
 .show-one-task {
   background-color: #dfdfdf;
   margin: 8px 0;
