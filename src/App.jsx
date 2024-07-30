@@ -5,21 +5,15 @@ import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 import "./App.css";
 
-// const Private = ({ Item }) => {
-//   const signed = false;
-
-//   return signed ? <Item /> : <Login />;
-// };
-
 const App = () => {
   return (
     <BrowserRouter>
       <Fragment>
         <Routes>
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route exact path="/Tasks" element={<Task />} />
-          <Route path="*" element={<Login />} />
+          <Route path="*" element={<Task />} />
         </Routes>
       </Fragment>
     </BrowserRouter>
