@@ -5,7 +5,7 @@ Seja bem-vindo! Aqui se encontra o código-fonte do frontend do site de tarefas 
 ## Sobre
 
 O app ainda está em desenvolvimento e sofrendo alterações constantes. Trata-se de um projeto que permite ao usuário criar uma conta e começar seu to-do list! <br><br>
-Utiliza React para o FrontEnd e Express, NodeJS e MySQL paraa BackEnd.
+- **Tecnologias:** Frontend: React. Backend: Express, NodeJS e MySQL.
 
 ## Atenção
 
